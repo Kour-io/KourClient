@@ -9,8 +9,9 @@ class rpc {
             console.log('Discord RPC connected');
             client.setActivity({
                 details: 'Official Kour Client',
+                largeImageKey: 'okc_logo',
                 startTimestamp: Date.now(),
-                buttons: [{ label: 'Join Server', url: 'https://discord.gg/kour' }],
+                buttons: [{ label: 'Join Server', url: 'https://discord.gg/CvvBXY4Y5V' }],
             });
         });
 
