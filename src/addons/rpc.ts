@@ -49,9 +49,6 @@ export default class RpcMain extends Addon {
                             : currentURL.pathname.slice(1, -1)
                         : '',
                     startTimestamp: this.initTime,
-
-                    joinSecret: currentURL ? currentURL.hash.slice(1) : '',
-                    partyId: currentURL ? 'p-' + currentURL.hash.slice(1) : '',
                 })
                 .catch(() => {});
         }, 5e3);

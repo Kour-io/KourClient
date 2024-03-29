@@ -9,6 +9,7 @@ import handleWindowEvent from '../util/winHandler';
 
 let window: BrowserWindow;
 let updateInfo: UpdateInfo | null | number = -1;
+let didInit = false;
 
 function registerListeners() {
     ipcMain.on('launcher-minimize', () => window && window.minimize());
@@ -33,15 +34,6 @@ function registerListeners() {
         'launcher-isUpdateAvailable',
         (event) => (event.returnValue = updateInfo)
     );
-
-    ipcMain.on('fullscreen', (event) => {
-        let win = BrowserWindow.fromWebContents(event.sender);
-        win?.setFullScreen(!win?.isFullScreen());
-    });
-
-    ipcMain.on('devtools', (event) =>
-        event.sender.openDevTools({ mode: 'detach' })
-    );
 }
 
 function updateCallback(info: UpdateInfo | null) {
@@ -53,7 +45,20 @@ function updateCallback(info: UpdateInfo | null) {
     });
 }
 
+function init() {
+    ipcMain.on('fullscreen', (event) => {
+        let win = BrowserWindow.fromWebContents(event.sender);
+        win?.setFullScreen(!win?.isFullScreen());
+    });
+
+    ipcMain.on('devtools', (event) =>
+        event.sender.openDevTools({ mode: 'detach' })
+    );
+}
+
 export default function openLauncher() {
+    if (!didInit) init();
+
     app.removeAllListeners('window-all-closed');
     app.on('window-all-closed', app.quit.bind(app));
 
