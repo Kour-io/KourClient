@@ -5,8 +5,6 @@ const log = require('electron-logger');
 const Store = require('electron-store');
 const store = new Store();
 // TOAST notifs
-
-log.info('[GAME]'.bgYellow, 'Game.js preload script loaded'.yellow);
 document.addEventListener('DOMContentLoaded', () => {
 
     const style = document.createElement('style');
