@@ -1,0 +1,45 @@
+{
+    "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
+    "appId": "com.Kour-io.OKC",
+    "productName": "OKC-Client",
+    "icon": "./app/img/icon.png",
+    "win": {
+      "artifactName": "${name}-${os}-setup-${version}-${arch}.${ext}",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "mac": {
+      "artifactName": "${name}-${os}-setup-${version}-${arch}.${ext}",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "nsis": {
+      "artifactName": "${name}-${os}-setup-${version}-${arch}.${ext}",
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "npmRebuild": false,
+    "files": [
+      "**/*",
+      "!.eslintrc",
+      "!.github",
+      "!.vscode",
+      "!.gitignore",
+      "LICENSE.md"
+    ],
+    "publish": {
+      "provider": "github",
+      "owner": "itsNMD404",
+      "repo": "KourClient",
+      "releaseType": "draft"
+    }
+  }
