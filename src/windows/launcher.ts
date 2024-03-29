@@ -46,6 +46,8 @@ function updateCallback(info: UpdateInfo | null) {
 }
 
 function init() {
+    didInit = true;
+
     ipcMain.on('fullscreen', (event) => {
         let win = BrowserWindow.fromWebContents(event.sender);
         win?.setFullScreen(!win?.isFullScreen());
