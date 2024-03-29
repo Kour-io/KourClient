@@ -14,13 +14,14 @@ async function processKey(e: KeyboardEvent) {
 
         try {
             url = new URL(clipboard);
-            console.log(url);
         } catch {
             return;
         }
 
-        if (url.hostname === window.location.hostname)
+        if (url.hostname === 'kour.io' && url.hash.length > 1) {
             window.location.href = clipboard;
+            window.location.reload();
+        }
     } else if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I'))
         ipcRenderer.send('devtools');
     else if (e.key === 'Escape') document.exitPointerLock();
