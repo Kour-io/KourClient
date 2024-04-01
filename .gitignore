@@ -1,5 +1,4 @@
 dist/
 node_modules/
-old/
+js/
 package-lock.json
-test.js

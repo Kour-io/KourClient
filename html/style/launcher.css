@@ -1,0 +1,223 @@
+@font-face {
+    font-family: 'Nexa';
+    src: url(../../assets/font/Nexa-Heavy.ttf);
+}
+
+@keyframes background-pos {
+    0%,
+    50%,
+    100% {
+        background-position: 50% 0%;
+    }
+
+    25% {
+        background-position: 0% 0%;
+    }
+
+    75% {
+        background-position: 100% 0%;
+    }
+}
+
+@keyframes marquee {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 50px 0;
+    }
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#000a, #000a),
+        url('https://kour.io/TemplateData/background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: background-pos 300s linear infinite;
+}
+
+* {
+    font-family: 'Nexa', sans-serif;
+}
+
+.navbar {
+    backdrop-filter: blur(10px);
+    background: #0005;
+    height: 40px;
+    -webkit-app-region: drag;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navbar span {
+    font-family: monospace;
+    font-weight: bold;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+
+    -webkit-app-region: no-drag;
+    transition: 0.5s background-color, 0.5s color;
+    user-select: none;
+}
+
+.navbar #close {
+    color: #e9892e;
+}
+
+.navbar #close:hover {
+    color: #fff;
+    background: #e9892e33;
+}
+
+.navbar span:hover {
+    color: #e9892e;
+    cursor: pointer;
+    background: #fff3;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+
+    height: 90%;
+    padding: 10px;
+
+    color: #fff;
+
+    user-select: none;
+}
+
+.content a {
+    color: #e9892e;
+    text-decoration: none;
+    border-bottom: 1px solid #0000;
+
+    transition: 0.5s border-bottom;
+}
+
+.content a:hover {
+    border-bottom: 1px solid #e9892e;
+}
+
+.content h1 {
+    padding: 10px 0;
+
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.content .float-bottom {
+    margin-top: auto;
+}
+
+.launchCont {
+    display: flex;
+}
+
+.launchCont * {
+    font-size: 25px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    background: #fff1;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.launchCont button {
+    color: #e9892e;
+    cursor: pointer;
+
+    transition: 0.5s color, 0.5s background;
+}
+
+.launchCont button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.launchCont button:not(:disabled):hover {
+    color: #fff;
+    background: #e9892e;
+}
+
+.launchCont select {
+    width: 100%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.launchCont select option {
+    font-size: 20px;
+    color: #e9892e;
+}
+
+.updateCont {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+
+    color: #fffc;
+    background: #fff1;
+}
+
+.updateProgCont {
+    height: 5px;
+    width: 100%;
+
+    margin-top: 3px;
+    border-radius: 5px;
+
+    background: #0005;
+    overflow: hidden;
+}
+
+#updateProg {
+    background: #e9892e;
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+    overflow: hidden;
+}
+
+#updateProg.inProg::after {
+    content: '';
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #c205 0%,
+        #c205 50%,
+        transparent 50%,
+        transparent 100%
+    );
+    background-size: 50px;
+
+    animation: marquee 2s linear infinite;
+    transform: skew(-30deg);
+}

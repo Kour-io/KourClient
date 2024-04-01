@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style/launcher.css" />
+</head>
+<body>
+    <div class="navbar">
+        <span id="minimize">-</span>
+        <span id="close">×</span>
+    </div>
+    <div class="content">
+        <h1 id="title"></h1>
+        <div>
+            This page is empty, so
+            <a href="https://github.com/Kour-io/KourClient">help us</a> fill it
+            up! Also make sure to join our
+            <a href="https://discord.gg/kour">Discord</a>!
+        </div>
+        <div class="float-bottom">
+            <div class="updateCont">
+                <div id="updateText">Checking for updates...</div>
+                <div class="updateProgCont">
+                    <div id="updateProg" class="inProg"></div>
+                </div>
+            </div>
+            <div class="launchCont">
+                <select name="Beta Selection" id="betaSelect">
+                    <option value="">Loading...</option>
+                </select>
+                <button id="launch" disabled>Launch</button>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,25 @@
+{
+    "flags": {
+        "disable-frame-rate-limit": true,
+        "disable-gpu-vsync": true,
+        "enable-gpu-rasterization": true,
+        "enable-oop-rasterization": true,
+        "enable-webgl2-compute-context": true,
+        "enable-highres-timer": true,
+        "disable-background-timer-throttling": true,
+        "enable-future-v8-vm-features": true,
+        "enable-webgl": true,
+        "renderer-process-limit=100": true,
+        "enable-accelerated-2d-canvas": true,
+        "enable-native-gpu-memory-buffers": true,
+        "high-dpi-support=1": true,
+        "ignore-gpu-blacklist": true,
+        "enable-accelerated-video-decode": true
+    },
+    "hotkeys": {
+        "fullscreen": "F11",
+        "reload": "F5",
+        "loadClipboardGame": "F6"
+    },
+    "backToLauncher": true
+}
